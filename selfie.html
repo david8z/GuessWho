@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .imgbox {
+                display: grid;
+                height: 100%;
+            }
+            .center-fit {
+                max-width: 100%;
+                max-height: 100vh;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <div class="imgbox">
+        <img class="center-fit" src='images/0title.png'>
+    </div>
+
+
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- CAMERA BUTTON -->
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .btn {
+      background-color: DodgerBlue;
+      border: none;
+      color: white;
+      padding: 12px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    /* Darker background on mouse-over */
+    .btn:hover {
+      background-color: RoyalBlue;
+    }
+</style>
+<!-- <button class="btn"><i class="fa fa-camera"></i> Take a selfie!</button> -->
+<!--  -->
+<!--  -->
+<!--  -->
+
+
+<p class="fa fa-camera" class="btn" Share your selfie!</p>
+    
+<input class="btn" type="file" accept="image/*" capture="camera" id="camera">
+<img id="frame">
+<script>
+  var camera = document.getElementById('camera');
+  var frame = document.getElementById('frame');
+
+  camera.addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    // Do something with the image file.
+    frame.src = URL.createObjectURL(file);
+  });
+</script>
+
+
+
+</body>
+</html>
